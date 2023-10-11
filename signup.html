@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/signup.js" type="module"></script>
+    <title>Register</title>
+</head>
+<body>
+    <div class="min-h-screen bg-gray-200 flex justify-center items-center">
+        <form action="" class="p-8 bg-white border-2 rounded-lg shadow-lg border-green-200 flex flex-col gap-3 w-[350px]" id="signupForm">
+
+            <h1 class="text-center capitalize font-bold text-xl mb-2 underline">signup</h1>
+
+            <div class="flex flex-col gap-1">
+                <label for="email" class="capitalize font-semibold">email</label>
+                <input type="email" name="email" class="border rounded px-3 py-1 outline-blue-500 shadow" placeholder="expamle@gmail.com"/>
+            </div>
+
+            <div class="flex flex-col">
+                <label for="password" class="capitalize font-semibold">password</label>
+                <input type="password" name="password" class="border rounded px-3 py-1 outline-blue-500 shadow" placeholder="*********"/>
+            </div>
+
+            <div">
+                <input type="submit" value="register" class="text-white bg-blue-500 capitalize px-3 py-1 rounded shadow hover:bg-green-400 cursor-pointer font-semibold">
+                <h1 class="text-end capitalize font-semibold" id="result"></h1>
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>
