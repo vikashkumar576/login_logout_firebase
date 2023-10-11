@@ -15,7 +15,7 @@ const firebaseConfig = {
 initializeApp(firebaseConfig);
 const auth = getAuth();
 
-export const login = async ({email , password}) => {
+export const login = async ({email , password}) => {//login
     try {
         const {user : {accessToken}} = await signInWithEmailAndPassword(auth , email , password );
         return {
@@ -30,17 +30,17 @@ export const login = async ({email , password}) => {
             success : false,
             error
         }
-    }
+    }//login
 }
 
-export const guard = (callback) => {
+export const guard = (callback) => {//login
     onAuthStateChanged(auth, (user)=> {
         if (user) return 
         location.href = callback
-    })
+    })//login
 }
 
-export const logout = async () => {
+export const logout = async () => {//login
     try {
         await signOut(auth)
         return {
@@ -52,5 +52,5 @@ export const logout = async () => {
             success : false,
             error
         }
-    }
+    }//login
 }
