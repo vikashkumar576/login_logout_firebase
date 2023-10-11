@@ -7,7 +7,7 @@ const loginForm = document.querySelector("#loginForm");
 // functions
 
 loginForm.onsubmit = async (e) => {
-    
+
     e.preventDefault();
     const user = {
         email : e.target[0].value.trim(),
@@ -16,7 +16,7 @@ loginForm.onsubmit = async (e) => {
 
     const {success} = await login(user);
     if(success) return (
-        alert("login success")
+        location.href = "index.html"
     )
 
     alert("invalid credentials")

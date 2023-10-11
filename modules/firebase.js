@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
-import { getAuth , signInWithEmailAndPassword} from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js'
+import { getAuth , signInWithEmailAndPassword, onAuthStateChanged , signOut} from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js'
 
 const firebaseConfig = {
   apiKey: "AIzaSyBP4G8lTFcBtp_KZ1tdJq0PmW5KyyqtihQ",
@@ -26,6 +26,28 @@ export const login = async ({email , password}) => {
     } 
     catch (error) {
         console.log(error);
+        return{
+            success : false,
+            error
+        }
+    }
+}
+
+export const guard = (callback) => {
+    onAuthStateChanged(auth, (user)=> {
+        if (user) return 
+        location.href = callback
+    })
+}
+
+export const logout = async () => {
+    try {
+        await signOut(auth)
+        return {
+            success : true
+        }
+
+    } catch (error) {
         return{
             success : false,
             error
