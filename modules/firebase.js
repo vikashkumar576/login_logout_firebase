@@ -66,7 +66,7 @@ export const signup = async ({email , password}) => {
     }
     catch (error) {
         return {
-            success : true,
+            success : false,
             error
         } 
     }

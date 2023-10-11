@@ -3,6 +3,7 @@ import { login } from "../modules/firebase.js";
 
 // selectors
 const loginForm = document.querySelector("#loginForm");
+const logRegister = document.querySelector("#logRegister");
 
 // functions
 
@@ -21,4 +22,8 @@ loginForm.onsubmit = async (e) => {
 
     alert("invalid credentials")
 
+}
+
+logRegister.onclick = () => {
+    location.href = "signup.html"
 }
