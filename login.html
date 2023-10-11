@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/login.js" type="module"></script>
+    <title>Login</title>
+</head>
+<body>
+    <div class="min-h-screen bg-gray-200 flex justify-center items-center">
+        <form action="" id="loginForm" class="px-10 py-6 bg-white flex flex-col gap-4 rounded-lg shadow-lg w-[350px]">
+
+            <h1 class="text-center font-bold underline capitalize text-xl">login</h1>
+
+            <div class="flex flex-col gap-1">
+                <label for="email"  class="capitalize font-semibold">email</label>
+                <input type="email" name="email" required class="border rounded px-2 py-1 outline-blue-400 shadow" placeholder="enter email">
+            </div>
+
+            <div class="flex flex-col gap-1">
+                <label for="password" class="capitalize font-semibold">password</label>
+                <input type="password" required  name="password" class="border rounded px-2 py-1 outline-blue-400 shadow" placeholder="enter password">
+            </div>
+
+            <div class="">
+                <input type="submit" value="login" class="bg-green-400 text-white px-3 py-0.5 capitalize font-semibold rounded mb-4 cursor-pointer">
+                <p class="capitalize text-xs cursor-pointer underline text-end">don't have an account ? <span class="capitalize text-blue-600 font-bold " id="logRegister">register</span></p>
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>
