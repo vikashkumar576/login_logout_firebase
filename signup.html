@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <script src="./js/signup.js" type="module"></script>
     <title>Register</title>
 </head>
@@ -15,18 +17,24 @@
 
             <div class="flex flex-col gap-1">
                 <label for="email" class="capitalize font-semibold">email</label>
-                <input type="email" name="email" class="border rounded px-3 py-1 outline-blue-500 shadow" placeholder="expamle@gmail.com"/>
+                <input type="email" required name="email" class="border rounded px-3 py-1 outline-blue-500 shadow" placeholder="expamle@gmail.com"/>
             </div>
 
-            <div class="flex flex-col">
+            <div class="flex flex-col relative">
                 <label for="password" class="capitalize font-semibold">password</label>
-                <input type="password" name="password" class="border rounded px-3 py-1 outline-blue-500 shadow" placeholder="*********"/>
+                <i class='bx bx-hide absolute right-1 bottom-1 cursor-pointer text-zinc-500 p-1' id="passShow"></i>
+                <input type="password" id="genPassword" required name="password" class="border rounded px-3 py-1 outline-blue-500 shadow" placeholder="*********" />
+            </div>
+
+            <div class="relative">
+                <button id="generate_password" type="button" class="bg-gray-200 text-xs px-2 py-1 capitalize"> genetate password</button>
+                <i class='bx bx-loader-circle bx-spin text-xl absolute ml-1 hidden' id="loader" ></i>
             </div>
 
             <div">
                 <input type="submit" value="register" class="text-white bg-blue-500 capitalize px-3 py-1 rounded shadow hover:bg-green-400 cursor-pointer font-semibold">
                 <h1 class="text-end capitalize font-semibold" id="result"></h1>
-                <p class="capitalize text-xs cursor-pointer underline text-end" id="regLogin">allready have an account <span class="capitalize text-blue-600 font-bold ">login</span></p>
+                <p class="capitalize text-xs cursor-pointer underline text-end" id="regLogin">already have an account <span class="capitalize text-blue-600 font-bold ">login</span></p>
             </div>
 
         </form>
